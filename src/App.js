@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from './components/header';
 
 const App = () => {
   return (
-    <p >
-      Nicholas Harry Fray Portfolio site
-    </p>
+    <>
+      <Header />
+    </>
   );
 }
 
