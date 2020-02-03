@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import MenuIcon from "@material-ui/icons/Menu";
 
 const Wrapper = styled.div`
   .navOpen {
