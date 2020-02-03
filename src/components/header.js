@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@material-ui/icons/Menu";
+import Navigation from "./navigation";
 
 const Wrapper = styled.div`
+  font-family: "Asap", sans-serif;
   .horizontal-scroll-wrapper::-webkit-scrollbar {
     display: none;
   }
@@ -20,7 +22,10 @@ const Wrapper = styled.div`
     padding-top: 1px;
     overflow-y: auto;
     overflow-x: hidden;
-    transform: rotate(-90deg) translateY(-500px);
+    transform: rotate(-90deg);
+    /* may need to play with in the future to get horizontal scroll to work properly */
+    // transform: rotate(-90deg) translateY(-500px);
+
     transform-origin: right top;
     & > div {
       display: block;
@@ -40,57 +45,25 @@ const Wrapper = styled.div`
     }
   }
 
-  font-family: "Asap", sans-serif;
-
   .top {
     height: 50vh;
-    margin: 0 140px;
-    padding-top: 50px;
-
-    h2 {
-      margin: 0;
-    }
+    width: 100vw;
+    padding: 50px 80px 0 80px;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
   }
 
-  .left-nav {
+  .Logo {
     top: 2vw;
     position: fixed;
+    font-size: 42px;
   }
 
-  .right-nav {
+  .MenuIcon {
     top: 2vw;
     right: 8vw;
     position: fixed;
-  }
-
-  .navOpen {
-    height: 50vh;
-    background-color: #fff3d8;
-    overflow-y: hidden;
-    max-height: 500px; /* approximate max height */
-
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0, 1, 1, 1);
-  }
-
-  .navClosed {
-    height: 0;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0, 1, 1, 1);
-    max-height: 0;
-  }
-
-  .fader {
-    -moz-transition: opacity 0.5s linear;
-    -o-transition: opacity 0.5s linear;
-    -webkit-transition: opacity 0.5s linear;
-    transition: opacity 0.5s linear;
-  }
-
-  .fader.fadedOut {
-    opacity: 0;
   }
 `;
 
@@ -99,31 +72,28 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <div className={navOpen ? "navOpen" : "navClosed"}>
-        <div className={navOpen ? "fader" : "fader fadedOut"}>
-          <h3 style={{ paddingTop: "200px" }}>
-            this is a heading for this cool nav nick made woow what a dev{" "}
-          </h3>
-        </div>
-      </div>
+      <Navigation navOpen={navOpen} />
       <div className="top">
-        <div className="left-nav">
+        <div className="Logo">
           <h2>
             Harry
             <br />
             Fray
           </h2>
         </div>
-        <div className="right-nav">
-          <MenuIcon onClick={() => setNavOpen(!navOpen)} />
+        <div className="MenuIcon">
+          <MenuIcon
+            style={{ width: "80px", height: "80px" }}
+            onClick={() => setNavOpen(!navOpen)}
+          />
         </div>
 
-        <h1 style={{ padding: "80px 0" }}>
+        <h1 style={{ padding: "170px 0" }}>
           Enjoy the process of creating
           <br /> get real results
         </h1>
       </div>
-      <div class="horizontal-scroll-wrapper squares">
+      {/* <div class="horizontal-scroll-wrapper squares">
         <div>item 1</div>
         <div>item 2</div>
         <div>item 3</div>
@@ -132,7 +102,7 @@ const Header = () => {
         <div>item 6</div>
         <div>item 7</div>
         <div>item 8</div>
-      </div>
+      </div> */}
     </Wrapper>
   );
 };
