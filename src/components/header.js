@@ -1,17 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const Wrapper = styled.div`
-
-
-  ::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
-  }
-
-  ::-webkit-scrollbar-button {
-    width: 1px;
-    height: 1px;
+  .horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
   }
 
   div {
@@ -22,7 +15,6 @@ const Wrapper = styled.div`
     position: absolute;
     display: block;
     left: 0;
-    width: 100vh;
     max-height: 100vw;
     margin: 0;
     padding-top: 1px;
@@ -48,18 +40,89 @@ const Wrapper = styled.div`
     }
   }
 
-  .todo {
-     position: fixed;
-     font-family: 'Asap', sans-serif;
+  font-family: "Asap", sans-serif;
+
+  .top {
+    height: 50vh;
+    margin: 0 140px;
+    padding-top: 50px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .left-nav {
+    top: 2vw;
+    position: fixed;
+  }
+
+  .right-nav {
+    top: 2vw;
+    right: 8vw;
+    position: fixed;
+  }
+
+  .navOpen {
+    height: 50vh;
+    background-color: #fff3d8;
+    overflow-y: hidden;
+    max-height: 500px; /* approximate max height */
+
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 1, 1, 1);
+  }
+
+  .navClosed {
+    height: 0;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 1, 1, 1);
+    max-height: 0;
+  }
+
+  .fader {
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+  }
+
+  .fader.fadedOut {
+    opacity: 0;
   }
 `;
 
 const Header = () => {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <Wrapper>
-        <h2 className='todo'>
-            Nicholas Harry Fray Portfolio Site
-        </h2>
+      <div className={navOpen ? "navOpen" : "navClosed"}>
+        <div className={navOpen ? "fader" : "fader fadedOut"}>
+          <h3 style={{ paddingTop: "200px" }}>
+            this is a heading for this cool nav nick made woow what a dev{" "}
+          </h3>
+        </div>
+      </div>
+      <div className="top">
+        <div className="left-nav">
+          <h2>
+            Harry
+            <br />
+            Fray
+          </h2>
+        </div>
+        <div className="right-nav">
+          <MenuIcon onClick={() => setNavOpen(!navOpen)} />
+        </div>
+
+        <h1 style={{ padding: "80px 0" }}>
+          Enjoy the process of creating
+          <br /> get real results
+        </h1>
+      </div>
       <div class="horizontal-scroll-wrapper squares">
         <div>item 1</div>
         <div>item 2</div>
