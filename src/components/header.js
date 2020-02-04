@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import MenuIcon from "@material-ui/icons/Menu";
 import Navigation from "./navigation";
 import Gallery from "./gallery";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 
 const Wrapper = styled.div`
   font-family: "Asap", sans-serif;
@@ -12,9 +21,9 @@ const Wrapper = styled.div`
   }
 
   .top {
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
-    padding: 50px 80px 0 80px;
+    padding-left: 50px;
     position: absolute;
     background-color: white;
     z-index: 10;
@@ -22,14 +31,41 @@ const Wrapper = styled.div`
 
   .Logo {
     top: 2vw;
+    mix-blend-mode: difference;
     position: fixed;
     font-size: 42px;
+    h2 {
+      margin: 0;
+    }
   }
 
   .MenuIcon {
+    mix-blend-mode: difference;
     top: 2vw;
     right: 8vw;
     position: fixed;
+  }
+
+  .SubHeading {
+    .AboutMe {
+      text-decoration: none;
+      color: black;
+
+      h2 {
+        font-size: 48px;
+        margin-right: 20px;
+      }
+      display: flex;
+      align-items: center;
+    }
+    h1 {
+      font-size: 72px;
+    }
+    position: absolute;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
 `;
 
@@ -38,27 +74,40 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <Navigation navOpen={navOpen} />
-      <div className="top">
-        {/* SVG logo change color on background black/white */}
-        <div className="Logo">
-          <h2>
-            Harry
-            <br />
-            Fray
-          </h2>
+      <div style={{ height: "100vh;" }}>
+        <Navigation navOpen={navOpen} />
+        <div className="top">
+          <div className="Logo">
+            <h2 style={{ color: "white" }}>
+              Harry
+              <br />
+              Fray
+            </h2>
+          </div>
+          <div className="MenuIcon">
+            <MenuIcon
+              style={{ width: "80px", height: "80px", color: "white" }}
+              onClick={() => {
+                scroll.scrollToTop();
+                setNavOpen(!navOpen);
+              }}
+            />
+          </div>
+          <div className="SubHeading">
+            <h1>
+              Enjoy the process of
+              <br />
+              creating, get real results.
+            </h1>
+            <a
+              className="AboutMe"
+              href="https://www.linkedin.com/in/nicholas-fray-40923388/"
+            >
+              <h2>More about me</h2>
+              <ArrowForwardIcon style={{ width: "80px", height: "80px" }} />
+            </a>
+          </div>
         </div>
-        <div className="MenuIcon">
-          <MenuIcon
-            style={{ width: "80px", height: "80px" }}
-            onClick={() => setNavOpen(!navOpen)}
-          />
-        </div>
-
-        <h1 style={{ padding: "170px 0", fontSize: "54px" }}>
-          Enjoy the process of creating
-          <br /> get real results
-        </h1>
       </div>
       <Gallery />
     </Wrapper>

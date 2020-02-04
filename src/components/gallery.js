@@ -1,49 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import styled from "styled-components";
 import MobileMenu from "./mobileMenu";
 import img from "../assets/IMG_test.jpeg";
+import Card from "./card";
 
 const list = [
   {
-    title: "First",
+    title: "Merlin Labs CMS",
     link: "www.facebook.com",
-    description: "my previous job :(",
+    description: "Content managment system for home brokerages",
     img,
     id: 0
   },
   {
-    title: "Second",
+    title: "Merlin Labs CMS",
     link: "www.facebook.com",
-    description: "my previous job :(",
-    img: "some image",
+    description: "Content managment system for home brokerages",
+    img,
     id: 1
   },
   {
-    title: "Merlin",
+    title: "Merlin Labs CMS",
     link: "www.facebook.com",
-    description: "my previous job :(",
-    img: "some image",
+    description: "Content managment system for home brokerages",
+    img,
     id: 2
   },
   {
-    title: "Merlin",
+    title: "Merlin Labs CMS",
     link: "www.facebook.com",
-    description: "my previous job :(",
-    img: "some image",
+    description: "Content managment system for home brokerages",
+    img,
     id: 3
   },
   {
-    title: "Last",
+    title: "Merlin Labs CMS",
     link: "www.facebook.com",
-    description: "my previous job :(",
-    img: "some image",
+    description: "Content managment system for home brokerages",
+    img,
     id: 4
   }
 ];
 
 const Wrapper = styled.div`
-  margin-top: 55vh;
+  margin-top: 40vh;
   .menu-item {
     width: 40vw;
     height: 50vh;
@@ -63,34 +64,15 @@ const Wrapper = styled.div`
   }
 `;
 
-const MenuItem = ({ text, selected }) => {
-  return <div className={`menu-item ${selected ? "active" : ""}`}>{text}</div>;
-};
-
-export const Menu = (list, selected) =>
-  list.map(el => {
-    const { name } = el;
-
-    return <MenuItem text={name} key={name} selected={selected} />;
-  });
-
 const Gallery = () => {
-  const [selected, setSelected] = useState("item1");
-
-  const onSelect = key => {
-    setSelected(key);
-  };
-
-  const menu = Menu(list, selected);
-
   return (
     <>
       <Wrapper>
         <ScrollMenu
-          className="desktopMenu"
-          data={menu}
-          selected={selected}
-          onSelect={onSelect}
+          alignCenter={false}
+          data={list.map(project => {
+            return <Card {...project} />;
+          })}
         />
       </Wrapper>
       <MobileMenu list={list} />

@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   .navOpen {
-    height: 50vh;
+    height: 60vh;
     background-color: #fff3d8;
     overflow-y: hidden;
-    max-height: 50vh; /* approximate max height */
+    max-height: 60vh; /* approximate max height */
 
     transition-property: all;
     transition-duration: 1s;

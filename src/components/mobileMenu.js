@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 1000px;
   background-color: grey;
-  margin-top: 50vh;
+  margin-top: 40vh;
   @media (min-width: 1024px) {
     display: none;
   }
