@@ -1,25 +1,53 @@
 import React, { useState } from "react";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import styled from "styled-components";
-// list of items
+import MobileMenu from "./mobileMenu";
+import img from "../assets/IMG_test.jpeg";
+
 const list = [
-  { name: "item1" },
-  { name: "item2" },
-  { name: "item3" },
-  { name: "item4" },
-  { name: "item5" }
+  {
+    title: "First",
+    link: "www.facebook.com",
+    description: "my previous job :(",
+    img,
+    id: 0
+  },
+  {
+    title: "Second",
+    link: "www.facebook.com",
+    description: "my previous job :(",
+    img: "some image",
+    id: 1
+  },
+  {
+    title: "Merlin",
+    link: "www.facebook.com",
+    description: "my previous job :(",
+    img: "some image",
+    id: 2
+  },
+  {
+    title: "Merlin",
+    link: "www.facebook.com",
+    description: "my previous job :(",
+    img: "some image",
+    id: 3
+  },
+  {
+    title: "Last",
+    link: "www.facebook.com",
+    description: "my previous job :(",
+    img: "some image",
+    id: 4
+  }
 ];
 
 const Wrapper = styled.div`
   margin-top: 55vh;
   .menu-item {
-    width: 45vw;
-    height: 30vh;
+    width: 40vw;
+    height: 50vh;
 
-    @media (min-width: 1024px) {
-      width: 40vw;
-      height: 50vh;
-    }
     background-color: green;
     padding: 0 40px;
     margin: 5px 10px;
@@ -29,6 +57,9 @@ const Wrapper = styled.div`
   .horizontal-menu {
     background-color: orange;
     width: 100vw;
+  }
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -53,9 +84,17 @@ const Gallery = () => {
   const menu = Menu(list, selected);
 
   return (
-    <Wrapper>
-      <ScrollMenu data={menu} selected={selected} onSelect={onSelect} />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <ScrollMenu
+          className="desktopMenu"
+          data={menu}
+          selected={selected}
+          onSelect={onSelect}
+        />
+      </Wrapper>
+      <MobileMenu list={list} />
+    </>
   );
 };
 

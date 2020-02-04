@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     padding: 50px 80px 0 80px;
     position: absolute;
     background-color: white;
-    z-index: 100;
+    z-index: 10;
   }
 
   .Logo {
@@ -40,6 +40,7 @@ const Header = () => {
     <Wrapper>
       <Navigation navOpen={navOpen} />
       <div className="top">
+        {/* SVG logo change color on background black/white */}
         <div className="Logo">
           <h2>
             Harry
