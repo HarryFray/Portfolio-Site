@@ -1,32 +1,51 @@
 import React from "react";
-import Logo from "./logo";
-import { Link } from "@reach/router";
 import styled from "styled-components";
+import Navigation from "./navigation";
 
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: black;
   color: white;
+  position: fixed;
+
+  .Copy {
+    position: absolute;
+    top: 15vh;
+    text-align: start;
+    margin: 0 0 150px 40px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    h2 {
+      line-height: 125px;
+      margin: 10px 0;
+      font-size: 72px;
+    }
+
+    h1 {
+      font-size: 48px;
+      opacity: 0.8;
+    }
+  }
 `;
 
 const AboutMe = () => {
   return (
-    <Wrapper>
-      <Link to="/">
-        <Logo></Logo>
-      </Link>
-      <h2>About Me</h2>
-      <h1>
-        I’m a Frontend Developer with extensive experience in various JavaScript
-        technologies. I have a deep passion for translating user pains and needs
-        into beautiful and accessible applications that improve work and life in
-        meaningful ways. I thrive in collaborative environments where there are
-        challenging problems to be solved. When I’m not building websites I’m
-        happiest reading a good book, camping, or having a coffee with close
-        friends.
-      </h1>
-    </Wrapper>
+    <>
+      <Navigation />
+      <Wrapper>
+        <div className="Copy">
+          <h1>About Me</h1>
+          <h2>
+            I’m a creator with a deep passion for translating user pains and
+            needs into beautiful and accessible applications. I thrive in
+            collaborative environments where there are challenging problems to
+            be solved.
+          </h2>
+        </div>
+      </Wrapper>
+    </>
   );
 };
 
