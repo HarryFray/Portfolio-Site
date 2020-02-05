@@ -1,7 +1,5 @@
 import React from "react";
-import ScrollMenu from "react-horizontal-scrolling-menu";
 import styled from "styled-components";
-import Card from "./card";
 import MobileMenu from "./mobileMenu";
 import MerlinPic from "../assets/img_merlin.jpeg";
 import HSPic from "../assets/img_hs.jpeg";
@@ -26,14 +24,14 @@ const list = [
   },
   {
     title: "Live Draft X",
-    // link: "www.facebook.com",
+    // link: internal link to project page,
     description: "Fantasy football draft taking place on a single machine",
     img: LiveDraftPic,
     id: 2
   },
   {
     title: "AccuStorm",
-    // link: "www.facebook.com",
+    // link: internal link to project page,
     description:
       "Visualize hail storms over property data producing contact information",
     img: AcuuStorm,
@@ -41,7 +39,7 @@ const list = [
   },
   {
     title: "REX",
-    // link: "www.facebook.com",
+    // link: internal link to project page,
     description: "Recommendation tracking for songs, movies, books, and food",
     img: Rex,
     id: 4
@@ -72,14 +70,14 @@ const Wrapper = styled.div`
 const Gallery = () => {
   return (
     <>
-      <Wrapper>
+      {/* <Wrapper>
         <ScrollMenu
           alignCenter={false}
           data={list.map(project => {
             return <Card {...project} />;
           })}
         />
-      </Wrapper>
+      </Wrapper> */}
       <MobileMenu list={list} />
     </>
   );

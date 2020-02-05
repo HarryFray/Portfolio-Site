@@ -1,11 +1,14 @@
 import React from "react";
-import Header from "./components/header";
+import Home from "./components/home";
+import { Router } from "@reach/router";
+import AboutMe from "./components/aboutme";
 
 const App = () => {
   return (
-    <>
-      <Header onScroll={e => console.log(e)} />
-    </>
+    <Router>
+      <AboutMe path="about-me" />
+      <Home path="/" />
+    </Router>
   );
 };
 

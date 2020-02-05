@@ -1,10 +1,14 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "@reach/router";
+import Logo from "./logo.js";
+import { animateScroll as scroll } from "react-scroll";
+import MenuIcon from "@material-ui/icons/Menu";
 
-import FacebookIcon from "@material-ui/icons/Facebook";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import MessageIcon from "@material-ui/icons/Message";
 
 const Wrapper = styled.div`
   .navOpen {
@@ -19,6 +23,7 @@ const Wrapper = styled.div`
   }
 
   .navClosed {
+    background-color: white;
     height: 0;
     transition-property: all;
     transition-duration: 1s;
@@ -49,11 +54,11 @@ const Wrapper = styled.div`
     color: white;
   }
 
-  .SocialIcons > * {
+  .SocialIcons a > * {
     width: 72px;
     height: 72px;
     color: white;
-    margin: 16px 16px 0 0;
+    margin: 18px 34px 0 0;
   }
 
   .Content {
@@ -63,42 +68,117 @@ const Wrapper = styled.div`
   }
 `;
 
-const Header = ({ navOpen }) => {
+const HeaderTodo = styled.div`
+  position: absolute;
+  z-index: 50;
+  padding-left: 54px;
+  mix-blend-mode: exclusion;
+
+  .MenuIcon {
+    top: 2vw;
+    right: 8vw;
+    position: fixed;
+  }
+`;
+
+const Header = () => {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
-    <Wrapper>
-      <div className={navOpen ? "navOpen" : "navClosed"}>
-        <div className="Content">
-          <div>
-            <h3>Menu</h3>
-            <ul>
-              <li>
-                <a href="https://github.com/HarryFray">About Me</a>
-              </li>
-              <li>
-                <a href="https://github.com/HarryFray">Approach</a>
-              </li>
-              <li>
-                <a href="https://github.com/HarryFray">Design</a>
-              </li>
-              <li>
-                <a href="https://github.com/HarryFray">The Code</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>Contact</h3>
-            <div className="SocialIcons">
-              <LinkedInIcon />
-              <GitHubIcon />
-              <YouTubeIcon />
-              <FacebookIcon />
+    <>
+      <HeaderTodo>
+        <Logo />
+        <div className="MenuIcon">
+          <MenuIcon
+            style={{
+              width: "80px",
+              height: "80px",
+              color: "white"
+            }}
+            onClick={() => {
+              scroll.scrollToTop();
+              setNavOpen(!navOpen);
+            }}
+          />
+        </div>
+      </HeaderTodo>
+      <Wrapper>
+        <div className={navOpen ? "navOpen" : "navClosed"}>
+          <div className="Content">
+            <div>
+              <h3>Menu</h3>
+              <ul>
+                <li>
+                  <Link to="about-me">About Me</Link>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nicholas-fray-40923388/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Approach
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nicholas-fray-40923388/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Design
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/HarryFray"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Code
+                  </a>
+                </li>
+              </ul>
             </div>
-            <h4>Email: harry.fray7@gmail.com</h4>
-            <h4>Phone: (660) 888-9796</h4>
+            <div>
+              <h3>Contact</h3>
+              <div className="SocialIcons">
+                <a
+                  href="https://www.linkedin.com/in/nicholas-fray-40923388/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedInIcon />
+                </a>
+                <a
+                  href="https://github.com/HarryFray"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GitHubIcon />
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=jxtqnUSgzrI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <YouTubeIcon />
+                </a>
+                <a
+                  href="https://medium.com/@harry.fray7/regular-expressions-with-javascript-an-introduction-2142fc01db14"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageIcon />
+                </a>
+              </div>
+              <h4>Email: harry.fray7@gmail.com</h4>
+              <h4>Phone: (660) 888-9796</h4>
+            </div>
           </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 
