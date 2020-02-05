@@ -12,14 +12,14 @@ import Rex from "../assets/img_rex.jpeg";
 const list = [
   {
     title: "Kansas City Reality",
-    link: "https://merlinlabs.gg/",
+    link: "https://www.bhhskcrealty.com/",
     description: "All in one site for purchasing homes in KC",
     img: MerlinPic,
     id: 0
   },
   {
     title: "Merlin CMS",
-    // link: "www.facebook.com",
+    link: "https://merlinlabs.gg/",
     description: "Content managment system for home brokerages",
     img: HSPic,
     id: 1
@@ -64,7 +64,7 @@ const Wrapper = styled.div`
     background-color: orange;
     width: 100vw;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `;

@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@material-ui/icons/Menu";
 import Navigation from "./navigation";
 import Gallery from "./gallery";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 
 const Wrapper = styled.div`
   font-family: "Asap", sans-serif;
@@ -30,11 +23,11 @@ const Wrapper = styled.div`
   }
 
   .Logo {
-    top: 2vw;
+    top: 3vw;
     mix-blend-mode: difference;
     position: fixed;
     font-size: 42px;
-    line-height: 46px;
+    line-height: 45px;
     h2 {
       margin: 0;
     }
@@ -54,6 +47,7 @@ const Wrapper = styled.div`
 
       h2 {
         font-size: 48px;
+        margin: 0;
         margin-right: 20px;
       }
       display: flex;
@@ -63,10 +57,15 @@ const Wrapper = styled.div`
       font-size: 72px;
     }
     position: absolute;
-    top: 10vh;
+    top: 12vh;
     display: flex;
     flex-direction: column;
     align-items: start;
+  }
+
+  .ArrowIcon {
+    width: 80px;
+    height: 80px;
   }
 `;
 
@@ -78,8 +77,9 @@ const Header = () => {
         <Navigation navOpen={navOpen} />
         <div className="top">
           <div className="Logo">
-            <h2 style={{ color: "white" }}>Harry</h2>
-            <h2 style={{ color: "white", marginLeft: "28px" }}>Fray</h2>
+            <h2 style={{ color: "white" }}>Nicholas</h2>
+            <h2 style={{ color: "white", marginLeft: "28px" }}>Harry</h2>
+            <h2 style={{ color: "white", marginLeft: "56px" }}>Fray</h2>
           </div>
           <div className="MenuIcon">
             <MenuIcon
@@ -107,7 +107,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <h2>More about me</h2>
-              <ArrowForwardIcon style={{ width: "80px", height: "80px" }} />
+              <ArrowForwardIcon className="ArrowIcon" />
             </a>
           </div>
         </div>
