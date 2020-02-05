@@ -34,6 +34,7 @@ const Wrapper = styled.div`
     mix-blend-mode: difference;
     position: fixed;
     font-size: 42px;
+    line-height: 46px;
     h2 {
       margin: 0;
     }
@@ -71,22 +72,22 @@ const Wrapper = styled.div`
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
-
   return (
     <Wrapper>
       <div style={{ height: "100vh;" }}>
         <Navigation navOpen={navOpen} />
         <div className="top">
           <div className="Logo">
-            <h2 style={{ color: "white" }}>
-              Harry
-              <br />
-              Fray
-            </h2>
+            <h2 style={{ color: "white" }}>Harry</h2>
+            <h2 style={{ color: "white", marginLeft: "28px" }}>Fray</h2>
           </div>
           <div className="MenuIcon">
             <MenuIcon
-              style={{ width: "80px", height: "80px", color: "white" }}
+              style={{
+                width: "80px",
+                height: "80px",
+                color: "white"
+              }}
               onClick={() => {
                 scroll.scrollToTop();
                 setNavOpen(!navOpen);
@@ -102,6 +103,8 @@ const Header = () => {
             <a
               className="AboutMe"
               href="https://www.linkedin.com/in/nicholas-fray-40923388/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <h2>More about me</h2>
               <ArrowForwardIcon style={{ width: "80px", height: "80px" }} />

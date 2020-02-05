@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .navOpen {
     height: 60vh;
-    background-color: #fff3d8;
+    background-color: grey;
     overflow-y: hidden;
     max-height: 60vh; /* approximate max height */
 

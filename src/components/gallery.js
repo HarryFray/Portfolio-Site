@@ -1,44 +1,49 @@
 import React from "react";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import styled from "styled-components";
-import MobileMenu from "./mobileMenu";
-import img from "../assets/IMG_test.jpeg";
 import Card from "./card";
+import MobileMenu from "./mobileMenu";
+import MerlinPic from "../assets/img_merlin.jpeg";
+import HSPic from "../assets/img_hs.jpeg";
+import LiveDraftPic from "../assets/img_nfl.jpeg";
+import AcuuStorm from "../assets/img_srorm.jpeg";
+import Rex from "../assets/img_rex.jpeg";
 
 const list = [
   {
-    title: "Merlin Labs CMS",
-    link: "www.facebook.com",
-    description: "Content managment system for home brokerages",
-    img,
+    title: "Kansas City Reality",
+    link: "https://merlinlabs.gg/",
+    description: "All in one site for purchasing homes in KC",
+    img: MerlinPic,
     id: 0
   },
   {
-    title: "Merlin Labs CMS",
-    link: "www.facebook.com",
+    title: "Merlin CMS",
+    // link: "www.facebook.com",
     description: "Content managment system for home brokerages",
-    img,
+    img: HSPic,
     id: 1
   },
   {
-    title: "Merlin Labs CMS",
-    link: "www.facebook.com",
-    description: "Content managment system for home brokerages",
-    img,
+    title: "Live Draft X",
+    // link: "www.facebook.com",
+    description: "Fantasy football draft taking place on a single machine",
+    img: LiveDraftPic,
     id: 2
   },
   {
-    title: "Merlin Labs CMS",
-    link: "www.facebook.com",
-    description: "Content managment system for home brokerages",
-    img,
+    title: "AccuStorm",
+    // link: "www.facebook.com",
+    description:
+      "Visualize hail storms over property data producing contact information",
+    img: AcuuStorm,
     id: 3
   },
   {
-    title: "Merlin Labs CMS",
-    link: "www.facebook.com",
-    description: "Content managment system for home brokerages",
-    img,
+    title: "REX",
+    // link: "www.facebook.com",
+    description: "Recommendation tracking for songs, movies, books, and food",
+    img: Rex,
     id: 4
   }
 ];

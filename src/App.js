@@ -1,12 +1,12 @@
-import React from 'react';
-import Header from './components/header';
+import React from "react";
+import Header from "./components/header";
 
 const App = () => {
   return (
     <>
-      <Header />
+      <Header onScroll={e => console.log(e)} />
     </>
   );
-}
+};
 
 export default App;
