@@ -21,30 +21,23 @@ const Wrapper = styled.div`
 
   .SubHeading {
     .AboutMe {
+      margin: 12px;
+      @media (min-width: 1020px) {
+        margin-top: 24px;
+      }
       text-decoration: none;
       color: black;
-
-      h2 {
-        font-size: 48px;
-        margin: 0;
-        margin-right: 20px;
-      }
       display: flex;
       align-items: center;
     }
-    h1 {
-      font-size: 72px;
-    }
     position: absolute;
     top: 12vh;
+    @media (min-width: 1020px) {
+      top: 18vh;
+    }
     display: flex;
     flex-direction: column;
     align-items: start;
-  }
-
-  .ArrowIcon {
-    width: 80px;
-    height: 80px;
   }
 `;
 
@@ -62,7 +55,7 @@ const Home = () => {
             </h1>
             <Link className="AboutMe" to="about-me">
               <h2>More about me</h2>
-              <ArrowForwardIcon className="ArrowIcon" />
+              <ArrowForwardIcon className="Icon" />
             </Link>
           </div>
         </div>

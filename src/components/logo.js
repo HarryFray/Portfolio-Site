@@ -7,19 +7,31 @@ const Wrapper = styled(Link)`
   text-decoration: none;
   mix-blend-mode: difference;
   position: fixed;
-  font-size: 42px;
-  line-height: 45px;
-  h2 {
-    margin: 0;
+  color: white;
+
+  .Harry {
+    margin-left: 28px;
+  }
+  .Fray {
+    margin-left: 56px;
+  }
+
+  @media (min-width: 1020px) {
+    .Harry {
+      margin-left: 26px;
+    }
+    .Fray {
+      margin-left: 43px;
+    }
   }
 `;
 
 const Logo = () => {
   return (
     <Wrapper to="/">
-      <h2 style={{ color: "white" }}>Nicholas</h2>
-      <h2 style={{ color: "white", marginLeft: "28px" }}>Harry</h2>
-      <h2 style={{ color: "white", marginLeft: "56px" }}>Fray</h2>
+      <h5>Nicholas</h5>
+      <h5 className="Harry">Harry</h5>
+      <h5 className="Fray">Fray</h5>
     </Wrapper>
   );
 };

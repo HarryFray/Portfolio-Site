@@ -17,16 +17,6 @@ const Wrapper = styled.div`
     position: absolute;
     bottom: 8px;
     left: 16px;
-    h2 {
-      line-height: 125px;
-      margin: 10px 0;
-      font-size: 72px;
-    }
-
-    h1 {
-      font-size: 48px;
-      opacity: 0.8;
-    }
   }
 `;
 
@@ -36,13 +26,13 @@ const AboutMe = () => {
       <Navigation />
       <Wrapper>
         <div className="Copy">
-          <h1>About Me</h1>
-          <h2>
+          <h3>About Me</h3>
+          <h4>
             I’m a creator with a deep passion for translating user pains and
             needs into beautiful and accessible applications. I thrive in
             collaborative environments where there are challenging problems to
             be solved.
-          </h2>
+          </h4>
         </div>
       </Wrapper>
     </>

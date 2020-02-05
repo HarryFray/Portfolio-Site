@@ -8,9 +8,9 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 1000px;
   margin-top: 40vh;
-  // @media (min-width: 1024px) {
-  //   display: none;
-  // }
+  @media (min-width: 1020px) {
+    display: none;
+  }
 `;
 
 const MobileMenu = ({ list }) => {

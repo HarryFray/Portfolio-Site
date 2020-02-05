@@ -6,6 +6,7 @@ import HSPic from "../assets/img_hs.jpeg";
 import LiveDraftPic from "../assets/img_nfl.jpeg";
 import AcuuStorm from "../assets/img_srorm.jpeg";
 import Rex from "../assets/img_rex.jpeg";
+import Card from "./card";
 
 const list = [
   {
@@ -13,71 +14,66 @@ const list = [
     link: "https://www.bhhskcrealty.com/",
     description: "All in one site for purchasing homes in KC",
     img: MerlinPic,
-    id: 0
+    key: 0
   },
   {
     title: "Merlin CMS",
     link: "https://merlinlabs.gg/",
     description: "Content managment system for home brokerages",
     img: HSPic,
-    id: 1
+    key: 1
   },
   {
     title: "Live Draft X",
     // link: internal link to project page,
     description: "Fantasy football draft taking place on a single machine",
     img: LiveDraftPic,
-    id: 2
+    key: 2
   },
   {
     title: "AccuStorm",
     // link: internal link to project page,
-    description:
-      "Visualize hail storms over property data producing contact information",
+    description: "Visualize hail storms over property data",
     img: AcuuStorm,
-    id: 3
+    key: 3
   },
   {
     title: "REX",
     // link: internal link to project page,
-    description: "Recommendation tracking for songs, movies, books, and food",
+    description: "Recommendation tracking for songs, books, and food",
     img: Rex,
-    id: 4
+    key: 4
   }
 ];
 
 const Wrapper = styled.div`
-  margin-top: 40vh;
-  .menu-item {
-    width: 40vw;
-    height: 50vh;
-
-    background-color: green;
-    padding: 0 40px;
-    margin: 5px 10px;
-    cursor: pointer;
-  }
-
-  .horizontal-menu {
-    background-color: orange;
-    width: 100vw;
-  }
-  @media (max-width: 1023px) {
-    display: none;
+  margin-top: 50vh;
+  left: -50vh;
+  position: absolute;
+  .todo {
+    margin-top: 20px;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    width: 50vh;
+    height: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: rotate(-90deg);
+    transform-origin: right top;
   }
 `;
 
 const Gallery = () => {
   return (
     <>
-      {/* <Wrapper>
-        <ScrollMenu
-          alignCenter={false}
-          data={list.map(project => {
-            return <Card {...project} />;
+      <Wrapper>
+        <div className="todo">
+          {list.map(item => {
+            return <Card {...item} />;
           })}
-        />
-      </Wrapper> */}
+        </div>
+      </Wrapper>
       <MobileMenu list={list} />
     </>
   );

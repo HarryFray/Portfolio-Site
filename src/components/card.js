@@ -14,27 +14,21 @@ const Wrapper = styled.div`
     position: absolute;
     bottom: 8px;
     left: 16px;
-    h2 {
-      line-height: 125px;
-      margin: 10px 0;
-      font-size: 72px;
-    }
-  }
-  h1 {
-    font-size: 48px;
-    opacity: 0.8;
   }
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${({ img }) => img});
   background-repeat: no-repeat;
   background-size: 100vw 100vw;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1020px) {
+    background-size: 50vh 50vh;
+    transform: rotate(90deg);
     width: 50vh;
     height: 50vh;
     img {
-      height: 50vh;
+      width: 50vh;
+      height: auto;
     }
   }
 `;
@@ -48,8 +42,8 @@ const Card = ({ title, link, description, img }) => {
     >
       <Wrapper img={img}>
         <div>
-          <h1>{title}</h1>
-          <h2>{description}</h2>
+          <h3>{title}</h3>
+          <h4>{description}</h4>
         </div>
       </Wrapper>
     </a>

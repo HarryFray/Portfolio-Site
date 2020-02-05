@@ -36,15 +36,11 @@ const Wrapper = styled.div`
     margin: 0;
     list-style: none;
     li {
-      font-size: 72px;
+
       padding: 16px 0;
       color: white;
     }
   }
-  h3,
-  h4 {
-    font-size: 36px;
-    padding-top: 30px;
     color: white;
     margin: 0;
   }
@@ -55,10 +51,8 @@ const Wrapper = styled.div`
   }
 
   .SocialIcons a > * {
-    width: 72px;
-    height: 72px;
     color: white;
-    margin: 18px 34px 0 0;
+    margin: 12px 28px 0 0;
   }
 
   .Content {
@@ -78,6 +72,7 @@ const HeaderTodo = styled.div`
     top: 2vw;
     right: 8vw;
     position: fixed;
+    color: white;
   }
 `;
 
@@ -88,28 +83,24 @@ const Header = () => {
     <>
       <HeaderTodo>
         <Logo />
-        <div className="MenuIcon">
-          <MenuIcon
-            style={{
-              width: "80px",
-              height: "80px",
-              color: "white"
-            }}
-            onClick={() => {
-              scroll.scrollToTop();
-              setNavOpen(!navOpen);
-            }}
-          />
-        </div>
+        <MenuIcon
+          className="MenuIcon Icon"
+          onClick={() => {
+            scroll.scrollToTop();
+            setNavOpen(!navOpen);
+          }}
+        />
       </HeaderTodo>
       <Wrapper>
         <div className={navOpen ? "navOpen" : "navClosed"}>
           <div className="Content">
             <div>
-              <h3>Menu</h3>
+              <h2>Menu</h2>
               <ul>
                 <li>
-                  <Link to="about-me">About Me</Link>
+                  <Link to="about-me">
+                    <h1>About Me</h1>
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -117,7 +108,7 @@ const Header = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Approach
+                    <h1>Approach</h1>
                   </a>
                 </li>
                 <li>
@@ -126,7 +117,7 @@ const Header = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Design
+                    <h1>Design</h1>
                   </a>
                 </li>
                 <li>
@@ -135,45 +126,45 @@ const Header = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    The Code
+                    <h1>The Code</h1>
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3>Contact</h3>
+              <h2>Contact</h2>
               <div className="SocialIcons">
                 <a
                   href="https://www.linkedin.com/in/nicholas-fray-40923388/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LinkedInIcon />
+                  <LinkedInIcon className="Icon" />
                 </a>
                 <a
                   href="https://github.com/HarryFray"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GitHubIcon />
+                  <GitHubIcon className="Icon" />
                 </a>
                 <a
                   href="https://www.youtube.com/watch?v=jxtqnUSgzrI"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <YouTubeIcon />
+                  <YouTubeIcon className="Icon" />
                 </a>
                 <a
                   href="https://medium.com/@harry.fray7/regular-expressions-with-javascript-an-introduction-2142fc01db14"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageIcon />
+                  <MessageIcon className="Icon" />
                 </a>
               </div>
-              <h4>Email: harry.fray7@gmail.com</h4>
-              <h4>Phone: (660) 888-9796</h4>
+              <h2>Email: harry.fray7@gmail.com</h2>
+              <h2>Phone: (660) 888-9796</h2>
             </div>
           </div>
         </div>
