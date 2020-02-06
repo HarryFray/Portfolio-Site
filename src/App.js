@@ -4,7 +4,7 @@ import { Router } from "@reach/router";
 import AboutMe from "./components/aboutme";
 import styled from "styled-components";
 import Project from "./components/project";
-
+import Navigation from "./components/navigation";
 const App = () => {
   useEffect(() => {
     if (window.screen.width > 990) {
@@ -81,9 +81,10 @@ const App = () => {
   `;
   return (
     <GlobalStyles>
+      <Navigation />
       <Router>
-        <AboutMe path="about-me" />
         <Home path="/" />
+        <AboutMe path="about-me" />
         <Project path="project/:projectId" />
       </Router>
     </GlobalStyles>

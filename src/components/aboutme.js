@@ -22,20 +22,16 @@ const Wrapper = styled.div`
 
 const AboutMe = () => {
   return (
-    <>
-      <Navigation />
-      <Wrapper>
-        <div className="Copy">
-          <h3>About Me</h3>
-          <h4>
-            I’m a creator with a deep passion for translating user pains and
-            needs into beautiful and accessible applications. I thrive in
-            collaborative environments where there are challenging problems to
-            be solved.
-          </h4>
-        </div>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <div className="Copy">
+        <h3>About Me</h3>
+        <h4>
+          I’m a creator with a deep passion for translating user pains and needs
+          into beautiful and accessible applications. I thrive in collaborative
+          environments where there are challenging problems to be solved.
+        </h4>
+      </div>
+    </Wrapper>
   );
 };
 

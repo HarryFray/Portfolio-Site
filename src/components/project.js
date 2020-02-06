@@ -8,7 +8,9 @@ import { Link } from "@reach/router";
 
 const Wrapper = styled.div`
   width: 100vw;
+  height: 100vh;
   background-color: white;
+  position: fixed;
 
   .Section {
     height: 100vh;
@@ -28,9 +30,18 @@ const Wrapper = styled.div`
   }
 `;
 
+const NON_POJECT_PAGES = [
+  { title: "About me", slug: "about-me" },
+  { title: "Approach", slug: "approach" },
+  { title: "Design", slug: "design" },
+  { title: "The Code", slug: "the-code" }
+];
+
 /* gets project data using slug from url */
 const getProjectData = slug => {
-  return PROJECTS.filter(proj => proj.slug === slug)[0];
+  return [...PROJECTS, ...NON_POJECT_PAGES].filter(
+    proj => proj.slug === slug
+  )[0];
 };
 
 const Default = ({ projectId }) => {
@@ -39,7 +50,7 @@ const Default = ({ projectId }) => {
     <div
       style={{
         position: "absolute",
-        top: "30vh",
+        top: "10vh",
         textAlign: "center",
         width: "100vw"
       }}
@@ -48,8 +59,9 @@ const Default = ({ projectId }) => {
       <div
         style={{
           width: "100%",
-          height: "20vh",
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img})`,
+          height: "10vh",
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img ||
+            ""})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "100vw 100vw",
           display: "flex",
@@ -81,18 +93,15 @@ const Project = ({ projectId }) => {
   //   };
 
   return (
-    <>
-      <Navigation />
-      <Wrapper>
-        <div className="Section">
-          <Default projectId={projectId} />
-          {/* <div className="ScrollCTA" onClick={handleScroll}>
+    <Wrapper>
+      <div className="Section">
+        <Default projectId={projectId} />
+        {/* <div className="ScrollCTA" onClick={handleScroll}>
             <ArrowDownwardIcon className="Icon" />
             <h3>Scroll Down</h3>
           </div> */}
-        </div>
-      </Wrapper>
-    </>
+      </div>
+    </Wrapper>
   );
 };
 

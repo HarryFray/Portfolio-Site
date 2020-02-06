@@ -103,31 +103,19 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/nicholas-fray-40923388/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link to="project/approach">
                     <h1>Approach</h1>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/nicholas-fray-40923388/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link to="project/design">
                     <h1>Design</h1>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/HarryFray"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link to="project/the-code">
                     <h1>The Code</h1>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

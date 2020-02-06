@@ -45,7 +45,6 @@ const Home = () => {
   return (
     <Wrapper>
       <div style={{ height: "100vh;" }}>
-        <Navigation />
         <div className="top">
           <div className="SubHeading">
             <h1>
