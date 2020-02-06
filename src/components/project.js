@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "./navigation";
 import styled from "styled-components";
 // import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 // import { animateScroll as scroll } from "react-scroll";

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "@reach/router";
+import { Link, globalHistory } from "@reach/router";
 import Logo from "./logo.js";
 import { animateScroll as scroll } from "react-scroll";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -78,6 +78,14 @@ const HeaderTodo = styled.div`
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
+
+  useEffect(() => {
+    globalHistory.listen(({ action }) => {
+      if (action === "PUSH") {
+        setNavOpen(false);
+      }
+    });
+  });
 
   return (
     <>

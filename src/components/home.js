@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Navigation from "./navigation";
 import Gallery from "./gallery";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { Link } from "@reach/router";

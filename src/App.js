@@ -5,6 +5,9 @@ import AboutMe from "./components/aboutme";
 import styled from "styled-components";
 import Project from "./components/project";
 import Navigation from "./components/navigation";
+
+const currentUrl = window.location.pathname;
+
 const App = () => {
   useEffect(() => {
     if (window.screen.width > 990) {
@@ -79,9 +82,11 @@ const App = () => {
       }
     }
   `;
+
   return (
     <GlobalStyles>
-      <Navigation />
+      {/* Big lesson here do not wrap nav in router.. */}
+      <Navigation currentUrl={currentUrl} />
       <Router>
         <Home path="/" />
         <AboutMe path="about-me" />
