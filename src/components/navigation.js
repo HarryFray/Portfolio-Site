@@ -57,7 +57,7 @@ const Wrapper = styled.div`
 
   .Content {
     display: flex;
-    padding: 220px 40px 0 54px;
+    padding: 180px 40px 0 54px;
     justify-content: space-between;
   }
 `;

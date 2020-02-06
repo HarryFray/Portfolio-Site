@@ -16,7 +16,7 @@ const Wrapper = styled(Link)`
     margin-left: 56px;
   }
 
-  @media (min-width: 1020px) {
+  @media (min-width: 990px) {
     .Harry {
       margin-left: 26px;
     }

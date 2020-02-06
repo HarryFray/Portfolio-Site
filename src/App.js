@@ -3,10 +3,11 @@ import Home from "./components/home";
 import { Router } from "@reach/router";
 import AboutMe from "./components/aboutme";
 import styled from "styled-components";
+import Project from "./components/project";
 
 const App = () => {
   useEffect(() => {
-    if (window.screen.width > 550) {
+    if (window.screen.width > 990) {
       document.body.style.overflow = "hidden";
     }
     document.body.style.margin = 0;
@@ -26,7 +27,7 @@ const App = () => {
     }
     // sub heading (greyed out)
     h3 {
-      opacity: 0.8;
+      opacity: 0.7;
       font-size: 48px;
     }
     // image copy
@@ -46,7 +47,7 @@ const App = () => {
       height: 80px;
     }
 
-    @media (min-width: 1020px) {
+    @media (min-width: 990px) {
       // heading
       h1 {
         font-size: 36px;
@@ -58,7 +59,6 @@ const App = () => {
       }
       // sub heading (greyed out)
       h3 {
-        opacity: 0.8;
         font-size: 24px;
       }
       // image copy
@@ -84,6 +84,7 @@ const App = () => {
       <Router>
         <AboutMe path="about-me" />
         <Home path="/" />
+        <Project path="project/:projectId" />
       </Router>
     </GlobalStyles>
   );

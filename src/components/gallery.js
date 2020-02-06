@@ -8,9 +8,10 @@ import AcuuStorm from "../assets/img_srorm.jpeg";
 import Rex from "../assets/img_rex.jpeg";
 import Card from "./card";
 
-const list = [
+export const PROJECTS = [
   {
     title: "Kansas City Reality",
+    slug: "kansas-city-reality",
     link: "https://www.bhhskcrealty.com/",
     description: "All in one site for purchasing homes in KC",
     img: MerlinPic,
@@ -18,6 +19,7 @@ const list = [
   },
   {
     title: "Merlin CMS",
+    slug: "merlin-cms",
     link: "https://merlinlabs.gg/",
     description: "Content managment system for home brokerages",
     img: HSPic,
@@ -25,21 +27,21 @@ const list = [
   },
   {
     title: "Live Draft X",
-    // link: internal link to project page,
+    slug: "live-draft-x",
     description: "Fantasy football draft taking place on a single machine",
     img: LiveDraftPic,
     key: 2
   },
   {
     title: "AccuStorm",
-    // link: internal link to project page,
+    slug: "accustorm",
     description: "Visualize hail storms over property data",
     img: AcuuStorm,
     key: 3
   },
   {
     title: "REX",
-    // link: internal link to project page,
+    slug: "rex",
     description: "Recommendation tracking for songs, books, and food",
     img: Rex,
     key: 4
@@ -69,12 +71,12 @@ const Gallery = () => {
     <>
       <Wrapper>
         <div className="todo">
-          {list.map(item => {
+          {PROJECTS.map(item => {
             return <Card {...item} />;
           })}
         </div>
       </Wrapper>
-      <MobileMenu list={list} />
+      <MobileMenu list={PROJECTS} />
     </>
   );
 };

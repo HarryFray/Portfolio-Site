@@ -22,8 +22,8 @@ const Wrapper = styled.div`
   .SubHeading {
     .AboutMe {
       margin: 12px;
-      @media (min-width: 1020px) {
-        margin-top: 24px;
+      @media (min-width: 990px) {
+        margin-top: 100px;
       }
       text-decoration: none;
       color: black;
@@ -32,7 +32,7 @@ const Wrapper = styled.div`
     }
     position: absolute;
     top: 12vh;
-    @media (min-width: 1020px) {
+    @media (min-width: 990px) {
       top: 18vh;
     }
     display: flex;
