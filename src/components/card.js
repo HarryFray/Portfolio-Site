@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 
-const Wrapper = styled.div`
+const StyledImg = styled.div`
   width: 100vw;
   height: 100vw;
   overflow: hidden;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: 100vw 100vw;
 
-  @media (min-width: 990px) {
+  @media (min-width: 1000px) {
     background-size: 50vh 50vh;
     transform: rotate(90deg);
     width: 50vh;
@@ -35,21 +35,21 @@ const Wrapper = styled.div`
 const Card = ({ title, link, description, img, slug }) => {
   return link ? (
     <a href={link} target="_blank" rel="noopener noreferrer">
-      <Wrapper img={img}>
+      <StyledImg img={img}>
         <div>
           <h3>{title}</h3>
           <h4>{description}</h4>
         </div>
-      </Wrapper>
+      </StyledImg>
     </a>
   ) : (
     <Link to={`project/${slug}`}>
-      <Wrapper img={img}>
+      <StyledImg img={img}>
         <div>
           <h3>{title}</h3>
           <h4>{description}</h4>
         </div>
-      </Wrapper>
+      </StyledImg>
     </Link>
   );
 };
